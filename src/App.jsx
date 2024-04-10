@@ -1,25 +1,19 @@
-import useFetch from "./hooks/useFetch";
-import CardTrilha from "./components/CardTrilha"
-import './App.css'
+import Navbar from "./components/Navbar";
+import{Outlet} from "react-router-dom"
+import { UsuariosContextProvider } from "./context/UsuariosContext";
 
 
 
 function App() {
-  const [data, loading] = useFetch("./cards.json");
-  const trilhas = data ? data.cadastroTrilhas : [];
-  
-
-
-  return (
+    return(
+        <UsuariosContextProvider>
+        
+        <Navbar/>
+        <Outlet/>
+        
+        </UsuariosContextProvider>
+        
+    )
     
-
-    <div>
-      {loading && <h4>Carregando trilhas...</h4>}
-      {!loading && trilhas && trilhas.map(cadastroTrilhas => (
-        <CardTrilha key={cadastroTrilhas.id} dadosTrilha={cadastroTrilhas} />
-      ))}
-    </div>
-  );
 }
-
-export default App
+export default App;
