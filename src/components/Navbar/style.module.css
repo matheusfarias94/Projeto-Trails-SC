@@ -1,4 +1,4 @@
-.container-cabecalho {
+.container{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,12 +8,17 @@
     color: white;
     background-color: darkolivegreen;
     font-family:Arial, Helvetica, sans-serif;
+    
 }
 
-.container-cabecalho a{
+.container a{
     
     padding-right: 30px;
     text-decoration: none;
     color:white;
+}
+#titulo{
+    font-size:xx-large
+
 }
 
