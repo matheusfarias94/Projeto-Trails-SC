@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home.jsx";
-import Cadastro from "../pages/Cadastro.jsx";
-import Lista from "../pages/Lista.jsx";
+import Home from "../pages/Home/Home.jsx";
+import Cadastro from "../pages/Cadastro/Cadastro.jsx";
+import ExplorarTrilhas from "../pages/ExplorarTrilhas/ExplorarTrilhas.jsx";
 import App from "../App.jsx"
 
 
@@ -11,8 +11,8 @@ const routers = createBrowserRouter([
       element: <App />,
       children: [
         {
-          path: "/lista-trilhas",
-          element: <Lista />,
+          path: "/explorar-trilhas",
+          element: <ExplorarTrilhas />,
         },
   
         {

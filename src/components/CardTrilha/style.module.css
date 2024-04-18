@@ -1,0 +1,39 @@
+
+  .cardContainer{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 2em;
+    background-color:rgb(243, 250, 245);
+    box-shadow: .2em .2em .2em black;
+    width:50%;
+    height: 25%;
+    font-family:'Roboto', sans-serif;
+    
+    
+  }
+  .leftColunm, .img{
+    flex: 1;
+    padding-inline-start: 1em;
+
+  }
+  .img{
+    display: flex;
+    flex-direction:row;
+    width:8em;
+    height:13em;
+    justify-content: end;
+    
+  
+  }
+  .cardContainer h4{
+    display: flex;
+    justify-content:end;
+    padding-top: 2em;
+
+  }
+  .containerTrajeto{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+  }
+ 

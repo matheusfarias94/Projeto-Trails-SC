@@ -1,18 +1,25 @@
-
 import * as PropTypes from "prop-types";
-import "./style.css";
-import "../Navbar/style.css";
+import styles from "../CardTrilha/style.module.css";
 
 function CardTrilha({ dadosTrilha }) {
   return (
-    <div>
-      <div className="card-container">
-        <h1>{dadosTrilha.nomeTrilha}</h1>
-        <span>
-          {" "}
-          {dadosTrilha.cidade} / {dadosTrilha.estado}
-        </span>
-        <img width={200} src={dadosTrilha.urlImagem} alt="imagem-trilha" />
+    <div className={styles.cardContainer}>
+      <div className={styles.leftColunm}>
+        <h3>
+          {dadosTrilha.nomeTrilha} - {dadosTrilha.cidade} / {dadosTrilha.estado}
+        </h3>
+
+        <h4>Por: {dadosTrilha.nomeUsuario}</h4>
+
+        <div className={styles.containerTrajeto}>
+          <span>Duração: {dadosTrilha.duracao} Min</span>
+          <p>Trajeto: {dadosTrilha.trajeto} Km</p>
+          <p>Dificuldade: {dadosTrilha.dificuldade}</p>
+        </div>
+      </div>
+
+      <div className={styles.img}>
+        <img src={dadosTrilha.urlImagem} alt="imagem-trilha" />
       </div>
     </div>
   );

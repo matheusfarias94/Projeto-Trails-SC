@@ -1,19 +1,12 @@
 import Navbar from "./components/Navbar";
-import{Outlet} from "react-router-dom"
-import { UsuariosContextProvider } from "./context/UsuariosContext";
-
-
+import { Outlet } from "react-router-dom";
 
 function App() {
-    return(
-        <UsuariosContextProvider>
-        
-        <Navbar/>
-        <Outlet/>
-        
-        </UsuariosContextProvider>
-        
-    )
-    
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
 }
 export default App;
