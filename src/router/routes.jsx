@@ -11,6 +11,10 @@ const routers = createBrowserRouter([
       element: <App />,
       children: [
         {
+          path: "/",
+          element: <Home />,
+        },
+        {
           path: "/explorar-trilhas",
           element: <ExplorarTrilhas />,
         },
@@ -19,10 +23,7 @@ const routers = createBrowserRouter([
           path: "/cadastro-trilhas",
           element: <Cadastro />,
         },
-        {
-          path: "/",
-          element: <Home />,
-        },
+        
       ],
     },
   ]);

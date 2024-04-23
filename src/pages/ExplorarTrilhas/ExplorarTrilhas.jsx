@@ -1,12 +1,27 @@
-import { TrilhasContext, TrilhasContextProvider } from "../../context/TrilhasContext";
+import { array } from "prop-types";
+import { TrilhasContext } from "../../context/TrilhasContext";
 import { useContext } from "react";
+import CardTrilha from "../../components/CardTrilha";
+import Footer from "../../components/Footer";
 
 function ExplorarTrilhas() {
-  const trilhas = useContext(TrilhasContext)
-   
+  const { cadastroTrilhas, isLoading } = useContext(TrilhasContext);
+
   return (
-  
-    <TrilhasContextProvider/>
+    <>
+      {Array.isArray(cadastroTrilhas) && !isLoading ? (
+        <div>
+          {cadastroTrilhas.map((trilha, index) => (
+            <CardTrilha dadosTrilha={trilha} key={index} />
+          ))}
+        </div>
+      ) : (
+        <span>Não há dados disponiveis</span>
+      )}
+      
+      <Footer/>
+      
+    </>
     
   );
 }

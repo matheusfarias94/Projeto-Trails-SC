@@ -15,28 +15,31 @@
  * 10 - [x] - IMPORTE O useContext DO REACT
  * 11 - [x] - RECEBA OS DADOS GLOBAIS USANDO O useContext
  */
-import CardTrilha from "../components/CardTrilha";
-import { createContext } from "react";
+
+import { createContext,useState,useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
 export const TrilhasContext = createContext();
-
+ 
 //PROVIDER
 export const TrilhasContextProvider = ({ children }) => {
-  //DADOS GLOBAIS
-  const [data, loading] = useFetch("./cards.json");
-  const trilhas = data ? data.cadastroTrilhas : [];
+  //DADOS GLOBAISs
+  const [dados, isLoading] = useFetch("./cards.json");
+  const [cadastroTrilhas,setCadastroTrilhas] = useState([]);
+
+  
+ useEffect(() => {
+  if (!!dados && !isLoading) {
+    setCadastroTrilhas(dados.cadastroTrilhas);
+  }
+ }, [dados]);
+
+  function addTrail(trailData) {
+    setCadastroTrilhas((t) => [...t, trailData]);
+  }
 
   return (
-    <TrilhasContext.Provider value={{ data, loading, trilhas }}>
-      {loading && <h4>Carregando trilhas...</h4>}
-      {!loading &&
-        trilhas.map((cadastroTrilhas) => (
-          <CardTrilha
-            key={cadastroTrilhas.index}
-            dadosTrilha={cadastroTrilhas}
-          />
-        ))}
+    <TrilhasContext.Provider value={{ cadastroTrilhas, setCadastroTrilhas, isLoading, addTrail }}>
       {children}
     </TrilhasContext.Provider>
   );
