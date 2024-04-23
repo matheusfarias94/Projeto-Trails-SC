@@ -1,5 +1,7 @@
-import Abutton from "../../components/Atomos/abutton";
-import styles from "../Home/style.module.css";
+import Abutton from "../../components/Atomos/abutton"
+import styles from "../../pages/Home/styles.module.css";
+import Footer from "../../components/Footer";
+
 function Home() {
   return (
     <div className={styles.container}>
@@ -43,29 +45,35 @@ function Home() {
           variant="contained"
         />
       </div>
+      <div className={styles.containerTitulo3}>
+        <div className={styles.titulo3}>
+          <h2>
+            Compartilhe fotos,
+            <br />
+            dicas e localização das <br />
+            suas trilhas favoritas
+          </h2>
 
-      <div className={styles.titulo3}>
-        <h2>
-          Compartilhe fotos,
-          <br />
-          dicas e localização das <br />
-          suas trilhas favoritas
-        </h2>
+          <Abutton
+            href="/cadastro-trilhas"
+            color="success"
+            text="Cadastrar nova trilha"
+            variant="contained"
+          />
+        </div>
 
-        <Abutton
-          href="/cadastro-trilhas"
-          color="success"
-          text="Cadastrar nova trilha"
-          variant="contained"
-        />
+        <div className={styles.imgTitulo3}>
+          <img
+            src="https://images.pexels.com/photos/1194233/pexels-photo-1194233.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+          />
+          
+        </div>
+        
       </div>
+      <Footer/>
+      
 
-      <div className={styles.imgTitulo3}>
-        <img
-          src="https://images.pexels.com/photos/1194233/pexels-photo-1194233.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt=""
-        />
-      </div>
     </div>
   );
 }

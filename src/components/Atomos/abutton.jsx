@@ -3,10 +3,10 @@ import Button from "@mui/material/Button";
 
 
 
-function Abutton({ text, color,variant,href }) {
+function Abutton({ text, color,variant,href,type }) {
   return (
   
-      <Button href={href} variant={variant} color={color}>{text}</Button>
+      <Button type={type} href={href} variant={variant} color={color}>{text}</Button>
     
   );
 }
